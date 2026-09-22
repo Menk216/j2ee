@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Score Lookup</title>
+</head>
+<body>
+    <h1>Score Lookup</h1>
+    <div th:if="${error}" style="color: red;" th:text="${error}"></div>
+    
+    <form action="/lookup111" method="POST">
+        MSSV: <input type="text" name="mssv" required><br>
+        Captcha (<span th:text="${captchaImage}"></span>): <input type="number" name="captcha" required><br>
+        <button type="submit">Lookup</button>
+    </form>
+
+    <div th:if="${score != null}">
+        <h2>Result for <span th:text="${score.name}"></span></h2>
+        <ul>
+            <li>Math: <span th:text="${score.math}"></span></li>
+            <li>Literature: <span th:text="${score.literature}"></span></li>
+            <li>English: <span th:text="${score.english}"></span></li>
+        </ul>
+    </div>
+</body>
+</html>
+

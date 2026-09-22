@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - EazySchool</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <ul>
+        <li class="alert alert-danger" role="alert"
+            th:each="error : ${#fields.errors('contact.*')}" th:text="${error}"
+            />
+    </ul>
+    <form action="/saveMsg" th:action="@{/saveMsg}" method="POST" th:object="${contact}">
+        Name: <input type="text" th:field="*{name}"><br>
+        Mobile: <input type="text" th:field="*{mobileNum}"><br>
+        Email: <input type="text" th:field="*{email}"><br>
+        Subject: <input type="text" th:field="*{subject}"><br>
+        Message: <textarea th:field="*{message}"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Products in Cart:</h2>
+    <ul>
+        <li th:each="prod : ${prods}" th:text="${prod.name} + ' - ' + ${prod.price}"></li>
+    </ul>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Holidays - EazySchool</title>
+</head>
+<body>
+    <h1>Holidays</h1>
+    <div th:if="${festival}">
+        <h2>Festival Holidays</h2>
+        <ul>
+            <li th:each="holiday : ${FESTIVAL}" th:text="${holiday.day} + ' - ' + ${holiday.reason}"></li>
+        </ul>
+    </div>
+    <div th:if="${federal}">
+        <h2>Federal Holidays</h2>
+        <ul>
+            <li th:each="holiday : ${FEDERAL}" th:text="${holiday.day} + ' - ' + ${holiday.reason}"></li>
+        </ul>
+    </div>
+</body>
+</html>
+

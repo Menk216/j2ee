@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Feedback</title>
+</head>
+<body>
+    <h1>Customer Feedback Form</h1>
+    <div th:if="${message}" style="color: green;" th:text="${message}"></div>
+    
+    <form action="/feedback" method="POST" th:object="${feedback}">
+        Name: <input type="text" th:field="*{name}" required><br>
+        Email: <input type="email" th:field="*{email}" required><br>
+        Comments: <textarea th:field="*{comments}" required></textarea><br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+</body>
+</html>
+
