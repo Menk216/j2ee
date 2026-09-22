@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 <body>
     <h2>Please verify you are human</h2>
     <div>
-        <img th:src="@{}" alt="Captcha Image"/>
+        <img th:src="@{${captchaUrl}}" alt="Captcha Image"/>
     </div>
     <form action="#" method="get">
         <input type="text" name="captchaInput" placeholder="Enter captcha"/>
