@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Captcha Randomizer</title>
+</head>
+<body>
+    <h2>Please verify you are human</h2>
+    <div>
+        <img th:src="@{}" alt="Captcha Image"/>
+    </div>
+    <form action="#" method="get">
+        <input type="text" name="captchaInput" placeholder="Enter captcha"/>
+        <button type="submit">Submit</button>
+    </form>
+    <p><a href="/captcha">Reload Captcha</a></p>
+</body>
+</html>
